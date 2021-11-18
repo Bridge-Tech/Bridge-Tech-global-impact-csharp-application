@@ -1,0 +1,15 @@
+﻿@model Empresa
+
+@{ ViewData["Title"] = "Cadastrar"; }
+
+
+<h1>Cadastro de Empresas</h1>
+
+@*<mensagem texto="@TempData["msg"]" class="alert alert-success"></mensagem>*@
+
+<form asp-action="cadastrar">
+    <partial name="_Form" />
+    @*<botao texto="Salvar" class="btn btn-warning"></botao>*@
+    <input class="btn btn-warning" type="submit" value="Salvar" />
+    <a asp-action="index" class="btn btn-dark">Empresas</a>
+</form>
