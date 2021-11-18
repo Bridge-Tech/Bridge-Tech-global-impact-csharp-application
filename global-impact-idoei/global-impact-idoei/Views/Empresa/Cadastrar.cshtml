@@ -1,15 +1,14 @@
-﻿
-@{
-    ViewData["Title"] = "Cadastrar";
-}
+﻿@model Empresa
 
-<h1>Cadastro de Empresa</h1>
+@{ ViewData["Title"] = "Cadastrar"; }
+
+
+<h1>Cadastro de Empresas</h1>
+
+<mensagem texto="@TempData["msg"]" class="alert alert-success"></mensagem>
 
 <form asp-action="cadastrar">
-
-
-
-    <input type="submit" value="Cadastrar" class="btn btn-primary" />
-
-
+    <partial name="_Form" />
+    <botao texto="Salvar" class="btn btn-warning"></botao>
+    <a asp-action="index" class="btn btn-dark">Empresas</a>
 </form>

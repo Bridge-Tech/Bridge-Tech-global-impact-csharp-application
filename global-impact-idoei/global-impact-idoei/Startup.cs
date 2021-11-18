@@ -23,7 +23,9 @@ namespace global_impact_idoei
             services.AddDbContext<iDoeiContext>(op =>
                op.UseSqlServer(Configuration.GetConnectionString("conexao")));
 
+            //Configurar a injeção de dependencia dos Repositories
             services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+
             //services.AddScoped<IDoacaoRepository, DoacaoRepository>();
             //services.AddScoped<IAlimentoRepository, AlimentoRepository>();
             //services.AddScoped<IOngRepository, OngRepository>();

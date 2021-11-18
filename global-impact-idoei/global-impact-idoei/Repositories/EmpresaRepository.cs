@@ -17,10 +17,9 @@ namespace global_impact_idoei.Repositories
         {
             _context.Empresas.Add(empresa);
         }
-
-        public IList<Empresa> Listar()
+        public void Update(Empresa empresa)
         {
-            return _context.Empresas.ToList();
+            _context.Empresas.Update(empresa);
         }
 
         public async Task<List<Empresa>> BuscarPorId(int id)
@@ -42,9 +41,20 @@ namespace global_impact_idoei.Repositories
             return lt;
         }
 
+        public void Remover(int id)
+        {
+            var empresa = _context.Empresas.Find(id);
+            _context.Empresas.Remove(empresa);
+        }
+
         public void Salvar()
         {
             _context.SaveChanges();
+        }
+
+        public IList<Empresa> Listar()
+        {
+            return _context.Empresas.ToList();
         }
     }
 }

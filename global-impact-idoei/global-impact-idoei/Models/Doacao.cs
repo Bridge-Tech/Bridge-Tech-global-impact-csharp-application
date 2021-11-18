@@ -21,5 +21,7 @@ namespace global_impact_idoei.Models
 
         [Required]
         public int IdAlimento { get; set; } //FK
+
+        public bool Disponivel { get; set; }
     }
 }

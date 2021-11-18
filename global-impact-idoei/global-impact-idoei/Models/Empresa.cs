@@ -19,7 +19,7 @@ namespace global_impact_idoei.Models
         public string Endereco { get; set; }
 
         public string TipoAlimento { get; set; }
-
         public int IdDoacao { get; set; } //FK
+        public int IdAlimento { get; set; } //FK
     }
 }

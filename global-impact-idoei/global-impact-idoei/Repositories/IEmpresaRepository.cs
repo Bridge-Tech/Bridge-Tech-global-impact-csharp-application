@@ -10,5 +10,7 @@ namespace global_impact_idoei.Repositories
         IList<Empresa> Listar();
         Task<List<Empresa>> BuscarPorId(int id);
         void Salvar();
+        void Remover(int id);
+        void Update(Empresa empresa);
     }
 }
