@@ -10,7 +10,7 @@ using global_impact_idoei.Persistencia;
 namespace global_impact_idoei.Migrations
 {
     [DbContext(typeof(iDoeiContext))]
-    [Migration("20211117034312_Inicio")]
+    [Migration("20211118104128_Inicio")]
     partial class Inicio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,6 +56,9 @@ namespace global_impact_idoei.Migrations
                     b.Property<int>("IdAlimento")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Disponivel")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("DtRecebimento")
                         .HasColumnType("datetime2");
 
@@ -83,6 +86,9 @@ namespace global_impact_idoei.Migrations
                     b.Property<string>("Endereco")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdAlimento")
+                        .HasColumnType("int");
 
                     b.Property<int>("IdDoacao")
                         .HasColumnType("int");

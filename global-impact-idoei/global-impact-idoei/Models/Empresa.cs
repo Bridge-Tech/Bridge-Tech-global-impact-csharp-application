@@ -6,7 +6,7 @@ namespace global_impact_idoei.Models
     [Table("Tb_Empresa")]
     public class Empresa
     {
-        [Column("Id")]
+        [Column("Id"), Key]
         public int Id { get; set; }
 
         [Required]
@@ -18,8 +18,8 @@ namespace global_impact_idoei.Models
         [Required]
         public string Endereco { get; set; }
 
-        public string TipoAlimento { get; set; }
+        public string? TipoAlimento { get; set; }
         public int IdDoacao { get; set; } //FK
-        public int IdAlimento { get; set; } //FK
+        //public int IdAlimento { get; set; } //FK
     }
 }

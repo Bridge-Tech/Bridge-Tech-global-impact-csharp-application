@@ -19,39 +19,6 @@ namespace global_impact_idoei.Controllers
             _empresaRepository = empresaRepository;
         }
 
-        //[HttpGet]
-        //public async IActionResult Detalhes(int id)
-        //{
-        //    //Pesquisar a empresa pelo Id
-        //    var empresa = _empresaRepository.BuscarPorId(id);
-
-        //    //Pesquisar docações associadas a empresa
-        //    var doacoes = _context.Doacoes.Where(x => x.Disponivel).ToList();
-
-        //    //Pesquisar docações associadas a empresa
-        //    var doacoesEmpresa = from e in _context.Empresas
-        //                         join d in _context.Doacoes on e.IdDoacao equals d.Id
-        //                         join a in _context.Alimentos on e.IdAlimento equals a.Id
-        //                         where d.Id.Equals(id)
-        //                         select new Empresa()
-        //                         {
-        //                             Id = e.Id,
-        //                             Nome = e.Nome,
-        //                             Cnpj = e.Cnpj,
-        //                             Endereco = e.Endereco,
-        //                             TipoAlimento = a.TipoAlimento,
-        //                             IdDoacao = d.Id,
-        //                             IdAlimento = a.Id
-        //                         };
-
-        //    return View(empresa);
-        //}
-
-        public IActionResult Index()
-        {
-            return View(CarregarViewModel());
-        }
-
         private EmpresaViewModel CarregarViewModel()
         {
             return new EmpresaViewModel()
@@ -70,8 +37,31 @@ namespace global_impact_idoei.Controllers
                 TempData["msg"] = "Empresa registrada";
                 return RedirectToAction("Index");
             }
-            return View("Index", CarregarViewModel());
+            //return View("Index", CarregarViewModel());
+            return View("Index");
         }
+
+        [HttpPost]
+        public IActionResult Editar(Empresa empresa)
+        {
+            _empresaRepository.Editar(empresa);
+            _empresaRepository.Salvar();
+            TempData["msg"] = "Empresa atualizada!";
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Index()
+        {
+            var lista = _context.Empresas.DefaultIfEmpty().ToList();
+            return View(lista);
+        }
+
+        //public IActionResult Index()
+        //{
+        //    //return View(CarregarViewModel());
+        //    var lista = _empresaRepository.Listar();
+        //    return View(lista);
+        //}
 
         [HttpPost]
         public IActionResult Remover(int id)

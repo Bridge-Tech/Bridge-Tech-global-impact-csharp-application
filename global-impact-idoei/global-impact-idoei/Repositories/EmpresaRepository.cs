@@ -17,7 +17,7 @@ namespace global_impact_idoei.Repositories
         {
             _context.Empresas.Add(empresa);
         }
-        public void Update(Empresa empresa)
+        public void Editar(Empresa empresa)
         {
             _context.Empresas.Update(empresa);
         }

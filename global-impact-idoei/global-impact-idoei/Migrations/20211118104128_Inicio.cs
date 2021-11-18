@@ -30,7 +30,8 @@ namespace global_impact_idoei.Migrations
                     IdEmpresa = table.Column<int>(type: "int", nullable: false),
                     IdAlimento = table.Column<int>(type: "int", nullable: false),
                     Id = table.Column<int>(type: "int", nullable: false),
-                    DtRecebimento = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    DtRecebimento = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Disponivel = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -47,7 +48,8 @@ namespace global_impact_idoei.Migrations
                     Cnpj = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Endereco = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TipoAlimento = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IdDoacao = table.Column<int>(type: "int", nullable: false)
+                    IdDoacao = table.Column<int>(type: "int", nullable: false),
+                    IdAlimento = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

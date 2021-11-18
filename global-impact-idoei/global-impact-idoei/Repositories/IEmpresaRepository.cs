@@ -11,6 +11,6 @@ namespace global_impact_idoei.Repositories
         Task<List<Empresa>> BuscarPorId(int id);
         void Salvar();
         void Remover(int id);
-        void Update(Empresa empresa);
+        void Editar(Empresa empresa);
     }
 }

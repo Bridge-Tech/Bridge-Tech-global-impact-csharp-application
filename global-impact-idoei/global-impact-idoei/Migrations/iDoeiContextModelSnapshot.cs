@@ -54,6 +54,9 @@ namespace global_impact_idoei.Migrations
                     b.Property<int>("IdAlimento")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Disponivel")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("DtRecebimento")
                         .HasColumnType("datetime2");
 
@@ -81,6 +84,9 @@ namespace global_impact_idoei.Migrations
                     b.Property<string>("Endereco")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdAlimento")
+                        .HasColumnType("int");
 
                     b.Property<int>("IdDoacao")
                         .HasColumnType("int");
