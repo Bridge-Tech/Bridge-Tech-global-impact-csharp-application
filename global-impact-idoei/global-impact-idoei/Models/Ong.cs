@@ -17,5 +17,7 @@ namespace global_impact_idoei.Models
 
         [Required]
         public string AreaAtuacao { get; set; }
+
+        //public int IdDoacao { get; set; } //FK
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace global_impact_idoei.Models
@@ -6,7 +7,7 @@ namespace global_impact_idoei.Models
     [Table("Tb_Empresa")]
     public class Empresa
     {
-        [Column("Id"), Key]
+        [Column("Id"), Key, HiddenInput]
         public int Id { get; set; }
 
         [Required]

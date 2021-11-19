@@ -13,18 +13,11 @@ namespace global_impact_idoei.Controllers
     {
         private iDoeiContext _context;
         private IEmpresaRepository _empresaRepository;
-        public EmpresaController(iDoeiContext context, IEmpresaRepository empresaRepository)
+        public EmpresaController(iDoeiContext context, 
+            IEmpresaRepository empresaRepository)
         {
             _context = context;
             _empresaRepository = empresaRepository;
-        }
-
-        private EmpresaViewModel CarregarViewModel()
-        {
-            return new EmpresaViewModel()
-            {
-                Lista = _empresaRepository.Listar()
-            };
         }
 
         [HttpPost]
@@ -37,7 +30,6 @@ namespace global_impact_idoei.Controllers
                 TempData["msg"] = "Empresa registrada";
                 return RedirectToAction("Index");
             }
-            //return View("Index", CarregarViewModel());
             return View("Index");
         }
 
@@ -50,18 +42,18 @@ namespace global_impact_idoei.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult Editar(int id)
+        {
+            var empresa = _context.Empresas.Find(id);
+            return View(empresa);
+        }
+
         public IActionResult Index()
         {
             var lista = _context.Empresas.DefaultIfEmpty().ToList();
             return View(lista);
         }
-
-        //public IActionResult Index()
-        //{
-        //    //return View(CarregarViewModel());
-        //    var lista = _empresaRepository.Listar();
-        //    return View(lista);
-        //}
 
         [HttpPost]
         public IActionResult Remover(int id)
@@ -72,17 +64,9 @@ namespace global_impact_idoei.Controllers
             return RedirectToAction("Index");
         }
 
-        //private void CarregarEmpresas()
-        //{
-        //    var lista = _context.Empresas.OrderBy(x => x.).ToList();
-
-        //    ViewBag.empresas = new SelectList(lista, "EmpresaId", "Nome");
-        //}
-
         [HttpGet]
         public IActionResult Cadastrar()
         {
-            //CarregarEmpresas();
             return View();
         }
     }
