@@ -1,0 +1,14 @@
+﻿@model Ong
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Atualizar os dados da Ong</h1>
+
+<form asp-action="editar">
+    <input asp-for="Id" />
+    <partial name="_Form" />
+    <input type="submit" class="btn btn-primary" value="Editar" />
+    <a asp-action="index" class="btn btn-dark">Cancelar</a>
+</form>

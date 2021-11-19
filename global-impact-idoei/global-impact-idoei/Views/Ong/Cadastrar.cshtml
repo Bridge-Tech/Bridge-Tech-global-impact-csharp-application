@@ -1,12 +1,12 @@
-﻿@model Empresa
+﻿@model Ong
 
 @{ ViewData["Title"] = "Cadastrar"; }
 
 
-<h1>Cadastro de Empresas</h1>
+<h1>Cadastro de Ong</h1>
 
 <form asp-action="cadastrar">
     <partial name="_Form" />
     <input class="btn btn-warning" type="submit" value="Salvar" />
-    <a asp-action="index" class="btn btn-dark">Empresas</a>
+    <a asp-action="index" class="btn btn-dark">Ongs</a>
 </form>
