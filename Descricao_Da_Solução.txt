@@ -1,0 +1,1 @@
+Nossa solução tem como objetivo combater a fome zero através da captação de alimentos e recursos (em dinheiro) através de nosso aplicativo web e mobile. A ideia é criar um espaço facilitado onde a pessoa física e empresa consigam fazer doações para ONGs cadastradas, além de postar eventos de coletas e visualizar os eventos que ocorrerão perto de sua localidade.
